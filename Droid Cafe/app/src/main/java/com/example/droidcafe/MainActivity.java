@@ -17,6 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     String mOrderMessage;
+    public static final String  EXTRA_MESSAGE = "com.example.android.droidcafe.extra.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message,
-                Toast.LENGTH_SHORT).show();
+                Toast.LENGTH_SHORT).show();                //showing a toast message
     }
 
     /**
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, mOrderMessage);
         startActivity(intent);
     }
 }
