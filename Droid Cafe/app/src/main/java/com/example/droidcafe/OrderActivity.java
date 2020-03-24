@@ -31,8 +31,7 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
         }
 
         // Create ArrayAdapter using the string array and default spinner layout.
-        android.widget.ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.labels_array, android.R.layout.simple_spinner_item);
+        android.widget.ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.labels_array, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears.
         // Specify the layout to use when the list of choices appears.
         adapter.setDropDownViewResource
@@ -72,8 +71,7 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     public void displayToast(String message) {
-        Toast.makeText(getApplicationContext(), message,
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     @Override

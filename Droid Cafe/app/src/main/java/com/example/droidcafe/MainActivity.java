@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,9 +30,15 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, mOrderMessage, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+                intent.putExtra(EXTRA_MESSAGE, mOrderMessage);
+                startActivity(intent);
             }
+        });
+
+        ImageView iceCreamImageView = findViewById(R.id.ice_cream);
+        iceCreamImageView.setOnClickListener(v-> {
+
         });
     }
 
@@ -59,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayToast(String message) {
-        Toast.makeText(getApplicationContext(), message,
-                Toast.LENGTH_SHORT).show();                //showing a toast message
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();                //showing a toast message
+
     }
 
     /**
@@ -90,9 +96,5 @@ public class MainActivity extends AppCompatActivity {
         displayToast(mOrderMessage);
     }
 
-    public void onClick(View view) {
-        Intent intent = new Intent(MainActivity.this, OrderActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, mOrderMessage);
-        startActivity(intent);
-    }
+
 }

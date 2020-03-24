@@ -84,10 +84,12 @@
         android:hint="@string/enter_address"
         android:inputType="textMultiLine"
         app:layout_constraintBaseline_toBaselineOf="@+id/address_label"
-        app:layout_constraintStart_toEndOf="@+id/address_label" />
+        app:layout_constraintStart_toEndOf="@+id/address_label"
+        android:scrollbars="vertical"/>
 
     <EditText
         android:id="@+id/phone_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -165,7 +167,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/phone_text"
         app:layout_constraintTop_toBottomOf="@+id/address_text" />
-
 
 
 
